@@ -1,9 +1,14 @@
 <h1>ToDo管理</h1>
 <% @tasks.each do |task| %>
-  <li><%= task.name %> | <%= task.description %>
+  <% if task.comprited? %>
+  <li><strike><%= task.name %> | <%= task.description %> | <%= task.date %></strike></li>
+  <% else %>
+  <li><%= task.name %> | <%= task.description %> | <%= task.date %></li>
+  <% end %>
+
   <%= link_to "編集する", edit_task_path(task) %>
   <%= link_to "削除する", task_path(task), method: :delete , data: {confirm: "本当に削除しますか？"}%>
-  </li>
+
   <% end %>
   <%= form_for @task do |f| %>
   <p>
@@ -11,7 +16,8 @@
     <%= f.text_field :name %>
     内容:
     <%= f.text_field :description %>
+    期日
+    <%= f.datetime_select :date %>
     <%= f.submit"作成" %>
   </p>
-  <%= link_to "お天気情報", "/tasks/weather" %>
   <% end %>

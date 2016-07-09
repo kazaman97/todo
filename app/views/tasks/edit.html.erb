@@ -5,7 +5,9 @@
     <%= f.text_field :name %>
     内容:
     <%= f.text_field :description %>
-    <%= check_box_tag :comprited %>
+    期日
+    <%= f.datetime_select :date %>
+    <%= f.check_box :comprited %>
     <%= label_tag :comprited, "クリア" %>
     <%= f.submit"作成" %>
   </p>
