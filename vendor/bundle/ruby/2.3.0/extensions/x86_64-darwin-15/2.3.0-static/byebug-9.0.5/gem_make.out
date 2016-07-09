@@ -1,0 +1,19 @@
+current directory: /Users/nowall/Desktop/sparta_201606/todo/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+/Users/nowall/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20160709-2897-1ebrdzl.rb extconf.rb
+creating Makefile
+
+current directory: /Users/nowall/Desktop/sparta_201606/todo/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/nowall/Desktop/sparta_201606/todo/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/nowall/Desktop/sparta_201606/todo/vendor/bundle/ruby/2.3.0/gems/byebug-9.0.5/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20160709-2897-136jtw5/byebug
