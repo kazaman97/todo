@@ -1,0 +1,12 @@
+<h1><font color="#0097A7">編集する</font></h1>
+ <%= form_for @task do |f| %>
+  <p>
+    やること:
+    <%= f.text_field :name %>
+    内容:
+    <%= f.text_field :description %>
+    <%= check_box_tag :comprited %>
+    <%= label_tag :comprited, "クリア" %>
+    <%= f.submit"作成" %>
+  </p>
+  <% end %>
