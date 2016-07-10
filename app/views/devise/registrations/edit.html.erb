@@ -1,11 +1,22 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+
 <h2>編集 <%= current_user.email %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email, "電子メール" %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true,class: "form-control" %>
+  </div>
+
+  <p>現在設定されている画像</p>
+      <%= image_tag current_user.url_image, class: "img-rounded", width: 200 %>
+
+  <div class="form-group">
+    <%= f.label :url_image, "壁紙" %><br />
+    <%= f.text_field :url_image, class: "form-control" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -30,9 +41,10 @@
     <%= f.label :current_password,"現在のパスワードを入力" %><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
+  <br />
 
-  <div class="actions">
-    <%= f.submit "更新" %>
+  <div class="form-group">
+    <%= f.submit "更新", class: "btn btn-default" %>
   </div>
 <% end %>
 

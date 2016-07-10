@@ -1,5 +1,11 @@
+<div class="row">
+<div class="col-lg-12">
+<div class="page-header">
 <h1><font color="#0097A7">編集する</font></h1>
+</div>
+</div>
  <%= form_for @task do |f| %>
+  <div class="input-group">
   <p>
     やること:
     <%= f.text_field :name %>
@@ -11,4 +17,7 @@
     <%= label_tag :comprited, "クリア" %>
     <%= f.submit"作成" %>
   </p>
+  </div>
+  </div>
   <% end %>
+</div>
