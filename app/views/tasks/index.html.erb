@@ -6,6 +6,12 @@
   <li><%= task.name %> | <%= task.description %> | <%= task.date %></li>
   <% end %>
 
+  <% if task.comprited? %>
+  <%= link_to "完了済み", not_comprited_path(task), method: :post %>
+  <% else %>
+  <%= link_to "完了する", comprited_path(task), method: :post %>
+  <% end %>
+
   <%= link_to "編集する", edit_task_path(task) %>
   <%= link_to "削除する", task_path(task), method: :delete , data: {confirm: "本当に削除しますか？"}%>
 

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :tasks
   root 'tasks#index'
+  post 'comprited/:id' => 'tasks#comprited', as: 'comprited'
+  post 'not_comprited/:id' => 'tasks#not_comprited', as: 'not_comprited'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
