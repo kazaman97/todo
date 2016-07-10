@@ -27,6 +27,18 @@ class TasksController < ApplicationController
     redirect_to "/tasks"
   end
 
+  def comprited
+    @task = Task.find(params[:id])
+    @task.update(comprited: true)
+    redirect_to :root
+  end
+
+  def not_comprited
+    @task = Task.find(params[:id])
+    @task.update(comprited: false)
+    redirect_to :root
+  end
+
   private
   def task_params
     params.require(:task).permit(:name, :description,:comprited,:date)
